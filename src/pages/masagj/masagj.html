@@ -1,0 +1,76 @@
+<!--
+  Generated template for the Masagj page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+	<ion-navbar>
+		<ion-title>New sesstion</ion-title>
+	</ion-navbar>
+</ion-header>
+<ion-content padding>
+    <ion-item>
+		<ion-label>Massager Name</ion-label>
+		<ion-select [(ngModel)]="owner" (ionChange)="updateSelectedOwner($event)"> 
+			<ion-option *ngFor="let owner of owners"  value="{{owner.owner_id}}">{{owner.name}}</ion-option> 
+		</ion-select>
+	</ion-item>
+    
+	<ion-item *ngIf="customer_show" class="animated flipInX">
+		<ion-label>Customer Name</ion-label>
+		<ion-select [(ngModel)]="user" (ionChange)="enableCounterView($event)">
+			<ion-option value="1" >Jani</ion-option>
+			<ion-option value="2">Tony</ion-option>
+		</ion-select>
+	</ion-item>
+	<ion-card *ngIf="counter_show" padding class="animated flipInX">
+		<br>
+        <div class="{{counter_class}}">
+        <span class="min">min: {{min}}</span><span class="money right">money: {{money}}</span>
+			<div class="round-bg {{animate}}">
+				<span>{{tick}}</span>
+			</div>
+			<br>
+				<div ion-row justify-content-around >
+                    
+					<button  *ngIf="start" ion-button icon-left  color="secondary" (click)="startTimer()" start>
+						<ion-icon name="md-play"></ion-icon>start
+					</button>
+                    
+					<button *ngIf="pause"  ion-button icon-left  color="yello" (click)="stopTimer()" end>
+						<ion-icon name="md-pause"></ion-icon>Pause
+					</button>
+                    
+                    <button  *ngIf="resume" ion-button icon-left  color="light" (click)="startTimer()" start>
+						<ion-icon name="md-play"></ion-icon>resume
+					</button>
+                    
+					<button  *ngIf="finish" ion-button icon-left  (click)="endTimer()" end>
+						<ion-icon name="md-stopwatch"></ion-icon>Finish 
+					</button>  
+                    
+				</div>
+            </div>
+        </ion-card>
+    <ion-card *ngIf="final" padding>
+        <div class="{{final_class}}"> 
+            
+        <ion-list>
+            <ion-item color="light"><span>Total Time : </span> <span class="right">{{min}} {{unit}}</span></ion-item>
+            <ion-item color="light"><span>Cost  : </span><span class="right">{{money}} </span></ion-item>
+        </ion-list>
+             
+             <br>
+             
+            <img *ngIf="singature_flag" [src]="singature" class="signature_image">
+            <br>
+           
+                 <div ion-row justify-content-around >  
+                     <button ion-button (click)="getSingature()">Get signature</button>
+                     <button *ngIf="singature_flag" (click)="saveNewEvent()" color="secondary"  ion-button>Save session</button> 
+                </div>
+            
+        </div>
+    </ion-card>
+</ion-content>

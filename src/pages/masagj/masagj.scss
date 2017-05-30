@@ -1,0 +1,37 @@
+page-masagj {
+.round-bg{
+	background: lightskyblue; 
+    width: 100px;
+    height: 100px; 
+    -moz-border-radius: 70px;
+    -webkit-border-radius: 70px;
+    border-radius: 70px;
+    text-align: center;
+    margin: 10px auto;
+    text-shadow: none;
+    color: white;
+}
+.round-bg span{
+	  margin-top: 10px; 
+    line-height: 2.7;
+    font-size: 39px;
+}
+    .money{
+       
+        color:green;
+    }
+    .min{
+        color: red;
+    }
+    ion-card{
+        background-color: white !important;
+    }
+    .right{
+         float:right;
+    }
+    .signature_image{
+        
+        box-shadow: 0px 0px 2px 0px lightgrey;
+    }
+    
+}

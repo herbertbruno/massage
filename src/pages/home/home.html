@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title text-center>
+      Masaj Time
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding> 
+     
+    <ion-list>
+        <ion-item (click) =  "loadPage('new')" >
+            <ion-icon name="ios-alarm" item-left></ion-icon>
+                New Masaj session 
+            <ion-icon name="ios-arrow-dropright" item-right></ion-icon>
+        </ion-item>
+        <ion-item (click) =  "loadPage('payment')">
+            <ion-icon name="logo-usd"  color="secondary" item-left></ion-icon>
+                Pyament/balance 
+            <ion-icon  name="ios-arrow-dropright" item-right></ion-icon>
+        </ion-item>
+        <ion-item>
+            <ion-icon name="ios-settings"  color="dark" item-left></ion-icon>
+                Settings 
+            <ion-icon  name="ios-arrow-dropright" item-right></ion-icon>
+        </ion-item>
+        <ion-item>
+            <ion-icon name="ios-information-circle"  color="danger" item-left></ion-icon>
+                About me
+            <ion-icon  name="ios-arrow-dropright" item-right></ion-icon>
+        </ion-item> 
+    </ion-list>
+  
+</ion-content>
